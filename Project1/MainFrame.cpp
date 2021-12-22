@@ -19,4 +19,16 @@ void CMainFrame::OnPaint()
 
 	// First just say hi.
 	dc.TextOut(mPoint.x, mPoint.y, mString);
+
+	CRect rect;
+	GetClientRect(rect);
+
+	// Show some information
+	dc.TextOut(1, 2, _T("Client Rectangle"));
+
+	CString str;
+	str.Format(_T("left=%d top=%d right=%d bottom=%d"), 
+		rect.left, rect.top, rect.right, rect.bottom);
+
+	dc.TextOut(8, 22, str);
 }
